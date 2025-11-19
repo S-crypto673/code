@@ -1,0 +1,22 @@
+// 03_simple_calculator_if.c
+#include <stdio.h>
+
+int main(void) {
+    char op;
+    double a, b, result;
+
+    printf("Enter expression (a + b): ");
+    scanf("%lf %c %lf", &a, &op, &b);
+
+    if (op == '+') result = a + b;
+    else if (op == '-') result = a - b;
+    else if (op == '*') result = a * b;
+    else if (op == '/') result = (b != 0) ? a / b : 0;
+    else {
+        printf("Invalid operator\n");
+        return 1;
+    }
+
+    printf("Result = %.2f\n", result);
+    return 0;
+}
